@@ -8,16 +8,21 @@ public class Main {
 		Scanner teclado = new Scanner(System.in);
 		// Array con enunciado y opciones
 		String[] opciones = { "Elige una base de datos:", "SQLite Database", "HSQLDB Database", "Salir" };
-		switch (Menu.menu(opciones, teclado)) {
-	        case 1:
-	        	System.out.println("opcion uno");
-	        	break;
-	        case 2:
-	        	System.out.println("opcion dos");
-	        	break;
-	        case 3:
-	        	System.out.println("opcion tres");
-	        	break;
+		
+		boolean salir = false;
+		while (!salir) {
+			switch (Menu.menu(opciones, teclado)) {
+		        case 1:
+		        	System.out.println("opcion uno");
+		        	break;
+		        case 2:
+		        	System.out.println("opcion dos");
+		        	break;
+		        case 3:
+		        	System.out.println("Hasta la proxima!");
+		        	salir = !salir;
+		        	break;
+			}
 		}
 
 	}
