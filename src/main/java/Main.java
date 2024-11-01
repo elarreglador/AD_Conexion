@@ -24,6 +24,8 @@ public class Main {
                 	tipo = "sqlite";
                 	archivo = new File("SQLite/my.db");
                 	con = conectaBD(tipo, archivo);
+                	infoBD(con);
+                	
                 	con.close();
                     break;
                 case 2:
@@ -31,6 +33,8 @@ public class Main {
                 	tipo = "hsqldb";
                 	archivo = new File("HSQLBD/my.bd");
                 	con = conectaBD(tipo, archivo);
+                	infoBD(con);
+                	
                 	con.close();
                     break;
                 case 3:
@@ -45,6 +49,10 @@ public class Main {
         teclado.close();  // Cerrar el scanner para liberar recursos
     }
 
+    
+    
+    
+    
     public static Connection conectaBD(String tipoBD, File archivo) throws SQLException {
         // Verificamos tipo de BD
         if (tipoBD.equals("sqlite") || tipoBD.equals("hsqldb")) {
@@ -59,6 +67,29 @@ public class Main {
         
         System.out.println("Conectado con exito a " + StrJDBC);
         return con;
-        
     }
+    
+    
+    public static int infoBD(Connection con) throws SQLException {
+    	
+    	String nombre = con.getMetaData().getDatabaseProductName();
+    	String driver = con.getMetaData().getDriverName();
+    	String url = con.getMetaData().getURL();
+    	String usuario = con.getMetaData().getUserName();
+    	
+    	System.out.println("----------------------------------");
+    	System.out.println("INFORMACIÓN DE LA BASE DE DATOS");
+    	System.out.println("----------------------------------");
+    	System.out.println("Nombre: " + nombre);
+    	System.out.println("Driver: " + driver);
+    	System.out.println("URL: " + url);
+    	System.out.println("Usuario: " + usuario);
+    	System.out.println();
+    	
+    	
+		return 0;
+    }
+    
+    
+
 }
