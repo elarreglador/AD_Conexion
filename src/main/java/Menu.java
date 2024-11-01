@@ -22,9 +22,6 @@ public class Menu {
 		
 		// usamos switch para gestionar la respuesta del menu
 		switch (menu(opciones, teclado)) {
-	        case 0:
-	        	System.out.println("opcion cero");
-	        	break;
 	        case 1:
 	        	System.out.println("opcion uno");
 	        	break;
