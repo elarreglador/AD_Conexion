@@ -27,8 +27,8 @@ public class Main {
 				tipo = "sqlite";
 				archivo = new File("SQLite/sample.db");
 				con = conectaBD(tipo, archivo);
-				creaTablas(con, "personas");
-				creaTablas(con, "estudiantes");
+				//creaTablas(con, "personas");
+				//creaTablas(con, "estudiantes");
 				infoBD(con);
 				infoTablas(con);
 
@@ -39,8 +39,8 @@ public class Main {
 				tipo = "hsqldb";
 				archivo = new File("HSQLBD/sample.bd");
 				con = conectaBD(tipo, archivo);
-				creaTablas(con, "personas");
-				creaTablas(con, "estudiantes");
+				//creaTablas(con, "personas");
+				//creaTablas(con, "estudiantes");
 				infoBD(con);
 				infoTablas(con);
 
